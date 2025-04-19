@@ -39,7 +39,7 @@ export const fetchDepartments = async () => {
     let departments;
     
     try {
-      const response = await axios.get('https://erp-backend-tawny.vercel.app/api/department',{
+      const response = await axios.get('http://localhost:5000/api/department',{
         headers : {
           "Authorization" : `Bearer ${localStorage.getItem('token')}`
         }

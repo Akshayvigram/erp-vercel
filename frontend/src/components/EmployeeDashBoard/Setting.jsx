@@ -29,7 +29,7 @@ const Setting = () => {
     } else {
       try {
         const response = await axios.put(
-          "https://erp-backend-tawny.vercel.app/api/setting/change-password",
+          "http://localhost:5000/api/setting/change-password",
           setting,
           {
             headers: {

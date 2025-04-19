@@ -16,7 +16,7 @@ const DepartmentList = () => {
   const fetchDepartments = async () => {
     setDepLoading(true);
     try {
-      const response = await axios.get('https://erp-backend-tawny.vercel.app/api/department', {
+      const response = await axios.get('http://localhost:5000/api/department', {
         headers: {
           "Authorization": `Bearer ${localStorage.getItem('token')}`
         }

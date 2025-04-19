@@ -42,7 +42,7 @@ export const columns = [
 export const AttendanceButtons = ({ employeeId ,status, statusChange}) => {
     const markEmployee = async (status, employeeId, date) => {
         try {
-            const response = await axios.put(`https://erp-backend-tawny.vercel.app/api/attendance/update/${employeeId}`, {
+            const response = await axios.put(`http://localhost:5000/api/attendance/update/${employeeId}`, {
                 status: status,
                 employeeId: employeeId,
                 date: date,
