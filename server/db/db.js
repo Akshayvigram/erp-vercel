@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { ENV_VARS } from "./envVars";
+import { ENV_VARS } from "./envVars.js";
 export const connectToDataBase=async()=>{
     try {
         await mongoose.connect(ENV_VARS.MONGODB_URL);
