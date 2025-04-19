@@ -44,12 +44,12 @@ app.use("/api/dashboard", dashboardRouter);
 app.use(express.static(path.join(__dirname, 'public/uploads')));
 
 if (ENV_VARS.NODE_ENV === "production") {
-	app.use(express.static(path.join(__dirname, "/frontend/dist")));
-  app.use(express.static(path.join(__dirname, 'public/uploads')));
+	app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
-	app.get("*", (req, res) => {
-		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-	});
+  // Catch-all route for client-side routing
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'));
+  });
 }
 
 // Start server
