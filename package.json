@@ -7,7 +7,7 @@
 	"scripts": {
 		"dev": "nodemon server/index.js",
 		
-		"build": "npm install --prefix frontend && npm run build --prefix frontend",
+		"build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
         "start": "NODE_ENV=production node server/index.js"
 	},
 	"keywords": [],
@@ -15,7 +15,7 @@
 	"type": "module",
 	"license": "ISC",
 	"dependencies": {
-		"bcrypt": "^5.1.1",
+	"bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "express": "^4.21.2",
