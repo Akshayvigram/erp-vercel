@@ -3,7 +3,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
+import { ENV_VARS } from './db/envVars.js';
 import authRoutes from "./routes/auth.route.js";
 import departmentRoutes from "./routes/department.js";
 import { connectToDataBase } from './db/db.js';
@@ -14,7 +14,7 @@ import attendanceRoute from './routes/attendance.js';
 import dashboardRouter from './routes/dashboard.js';
 import SalaryRouter from "./routes/salary.js";
 
-dotenv.config();
+
 
 const app = express();
 
@@ -23,13 +23,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'public/uploads')));
 
 // CORS configuration
-app.use(cors({
-  origin: 'https://azhizen-erp.vercel.app', // Your frontend URL
-  credentials: true
-}));
+app.use(cors())
 
 // Middleware
 app.use(express.json());
@@ -45,12 +41,19 @@ app.use("/api/attendance", attendanceRoute);
 app.use("/api/dashboard", dashboardRouter);
 
 // Fallback for non-API routes (optional)
-app.get('*', (req, res) => {
-  res.status(404).json({ message: "Not Found" });
-});
+app.use(express.static(path.join(__dirname, 'public/uploads')));
+
+if (ENV_VARS.NODE_ENV === "production") {
+	app.use(express.static(path.join(__dirname, "/frontend/dist")));
+  app.use(express.static(path.join(__dirname, 'public/uploads')));
+
+	app.get("*", (req, res) => {
+		res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+	});
+}
 
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = ENV_VARS.PORT || 5000;
 app.listen(PORT, () => {
   connectToDataBase();
   console.log(`✅ Server running on ${PORT}`);

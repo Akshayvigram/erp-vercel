@@ -1,5 +1,6 @@
 import jwt from "jsonwebtoken"
 import User from "../models/User.js";
+import { ENV_VARS } from "../db/envVars.js";
 export const authMiddleware=async(req,res,next)=>{
     try {
         const token=req.headers.authorization.split(' ')[1];
@@ -8,7 +9,7 @@ export const authMiddleware=async(req,res,next)=>{
     }
     
     
-    const decoded=jwt.verify(token,process.env.JWT_KEY);
+    const decoded=jwt.verify(token,ENV_VARS.JWT_KEY);
     if(!decoded){
         return res.status(400).json({success:false,message:"token not found"})
     }
