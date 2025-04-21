@@ -24,7 +24,7 @@ export const getSalary = async(req, res) => {
     try {
         const {id, role} = req.params;
         
-        const userRole = req.user?.role; // Assuming you have role in request object from auth middleware
+        const userRole = role; // Assuming you have role in request object from auth middleware
         
         let salary;
         if (userRole === 'employee') {
