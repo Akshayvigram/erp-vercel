@@ -26,7 +26,7 @@ const Edit = () => {
     useEffect(() => {
         const fetchEmployee = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/employee/${id}`, {
+                const response = await axios.get(`/api/employee/${id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     },
@@ -60,7 +60,7 @@ const Edit = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`https://erp-backend-tawny.vercel.app/api/employee/${id}`, employee, {
+            const response = await axios.put(`/api/employee/${id}`, employee, {
                 headers: {
                     "Authorization": `Bearer ${localStorage.getItem('token')}`
                 }

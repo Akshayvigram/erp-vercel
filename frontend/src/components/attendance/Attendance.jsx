@@ -22,7 +22,7 @@ const Attendance = () => {
 const fetchAttendance=async()=>{
     try {
   
-      const response = await axios.get(`http://localhost:5000/api/attendance/${id}`, {
+      const response = await axios.get(`/api/attendance/${id}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

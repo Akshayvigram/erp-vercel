@@ -9,7 +9,7 @@ const Detail = () => {
     useEffect(()=> {
         const fetchLeave = async () => {
           try {
-            const response = await axios.get(`http://localhost:5000/api/leave/detail/${id}`,{
+            const response = await axios.get(`/api/leave/detail/${id}`,{
               headers : {
                 Authorization : `Bearer ${localStorage.getItem('token')}`
               },
@@ -32,7 +32,7 @@ const Detail = () => {
 
     const changeStatus = async (id, status) => {
       try {
-        const response = await axios.put(`http://localhost:5000/api/leave/${id}`, {status},
+        const response = await axios.put(`/api/leave/${id}`, {status},
           {
           headers : {
             Authorization : `Bearer ${localStorage.getItem('token')}`
@@ -62,7 +62,7 @@ const Detail = () => {
                 {/* Image */}
                 <div className="flex justify-center sm:justify-start">
                   <img
-                    src={`http://localhost:5000/${leave.employeeId.userId.profileImage}`}
+                    src={`/${leave.employeeId.userId.profileImage}`}
                     alt={leave.employeeId.userId.name}
                     className="rounded-full border w-32 sm:w-48 lg:w-64 h-32 sm:h-48 lg:h-64 object-cover"
                   />

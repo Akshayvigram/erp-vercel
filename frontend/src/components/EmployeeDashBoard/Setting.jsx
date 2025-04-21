@@ -29,7 +29,7 @@ const Setting = () => {
     } else {
       try {
         const response = await axios.put(
-          "http://localhost:5000/api/setting/change-password",
+          "/api/setting/change-password",
           setting,
           {
             headers: {

@@ -32,7 +32,7 @@ const AddEmployee = () => {
             // console.log(department);
             // console.log(localStorage.getItem('token'));
             
-            const response = await axios.post('http://localhost:5000/api/employee/add', fromDataObj,{
+            const response = await axios.post('/api/employee/add', fromDataObj,{
                 headers: { 
                     "Authorization" : `Bearer ${localStorage.getItem('token')}`
                 }

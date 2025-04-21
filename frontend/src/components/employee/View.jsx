@@ -39,7 +39,7 @@ const View = () => {
               <div className='grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6 px-2 sm:px-4 '>
                 <div className='flex justify-center mb-3 sm:mb-4 md:mb-0'>
                   <img 
-                    src={`http://localhost:5000/${employee.userId.profileImage}`} 
+                    src={`/${employee.userId.profileImage}`} 
                     alt="Employee" 
                     className='rounded-full border w-32 sm:w-48 md:w-60 lg:w-72 h-32 sm:h-48 md:h-60 lg:h-72 object-cover'
                   />

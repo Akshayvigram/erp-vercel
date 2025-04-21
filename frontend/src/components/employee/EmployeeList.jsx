@@ -25,7 +25,7 @@ const EmployeeList = () => {
                   dep_name: emp.department.dep_name,
                   name:emp.userId.name,
                   dob:new Date(emp.dob).toLocaleDateString(),
-                  profileImage:<img className="rounded-full" src={`http://localhost:5000/${emp.userId.profileImage}`}/>,
+                  profileImage:<img className="rounded-full" src={`/${emp.userId.profileImage}`}/>,
                   action: (<EmployeeButtons id={emp._id}/>),
                 }
               ));
