@@ -7,7 +7,7 @@ import Department from "../models/Department.js";
 
 const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,"public/uploads")
+        cb(null,"server/public/uploads")
     },
     filename:(req,file,cb)=>{
         cb(null,Date.now()+path.extname(file.originalname))
@@ -25,6 +25,7 @@ export const addEmployee=async(req,res)=>{
        
         
         const user=await User.findOne({email})
+        console.log(user);
         
         if(user){
             return res.status(400).json({success:false,error:"user already exists"});
