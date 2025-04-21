@@ -23,8 +23,11 @@ export const addSalary=async(req,res)=>{
 export const getSalary = async(req, res) => {
     try {
         const {id, role} = req.params;
+        console.log(id);
+        console.log(role);
         
-        const userRole = role; // Assuming you have role in request object from auth middleware
+        
+        const userRole = role; 
         
         let salary;
         if (userRole === 'employee') {
@@ -39,10 +42,16 @@ export const getSalary = async(req, res) => {
                 }
             }
         } else if (userRole === 'admin') {
-            // Admin flow
-            // Assuming admin wants to see salary by employee ID
             salary = await Salary.find({employeeId: id})
-                .populate('employeeId', 'employeeId');
+                .populate({
+                    path: 'employeeId',
+                    select: 'employeeId userId',
+                    populate: {
+                        path: 'userId',
+                        select: 'name'
+                    }
+                });
+                console.log(salary);
                 
             if (!salary || salary.length < 1) {
                 return res.status(404).json({success: false, error: "No salary records found for this employee"});

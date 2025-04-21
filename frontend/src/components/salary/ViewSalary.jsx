@@ -79,7 +79,7 @@ const ViewSalary = () => {
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50">
                   <tr className="border-b">
                     <th className="px-4 py-3 sm:px-6">SNO</th>
-                    <th className="px-4 py-3 sm:px-6">Emp ID</th>
+                    <th className="px-4 py-3 sm:px-6">Emp Name</th>
                     <th className="px-4 py-3 sm:px-6">Salary</th>
                     <th className="px-4 py-3 sm:px-6">Allowances</th>
                     <th className="px-4 py-3 sm:px-6">Deduction</th>
@@ -95,7 +95,7 @@ const ViewSalary = () => {
                     >
                       <td className="px-4 py-3 sm:px-6">{index + 1}</td>
                       <td className="px-4 py-3 sm:px-6">
-                        {salary.employeeId.employeeId}
+                        {salary.employeeId.userId.name}
                       </td>
                       <td className="px-4 py-3 sm:px-6">{salary.basicSalary}</td>
                       <td className="px-4 py-3 sm:px-6">{salary.allowances}</td>
