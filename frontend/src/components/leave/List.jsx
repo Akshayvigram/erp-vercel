@@ -48,13 +48,13 @@ const fetchLeaves=async()=>{
       <input 
               type="text" 
               placeholder='Search By Dep Name' 
-              className='w-full sm:w-56 md:w-64 px-2 sm:px-3 md:px-4 py-1 sm:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600 text-sm sm:text-base'
+              className='w-full sm:w-56 md:w-64 px-2 sm:px-3 md:px-4 py-1 sm:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B4D9] text-sm sm:text-base'
               
             />
         {user.role === "employee" && (
           <Link
             to="/employee-dashboard/add-leave"
-            className="px-2 py-1 sm:px-4 sm:py-1.5 bg-teal-600 hover:bg-teal-700 rounded-md text-white text-sm sm:text-base w-full sm:w-auto text-center"
+            className="px-2 py-1 sm:px-4 sm:py-1.5 bg-[#00B4D9] hover:bg-[#00B4D9] rounded-md text-white text-sm sm:text-base w-full sm:w-auto text-center"
           >
             Add New Leave
           </Link>

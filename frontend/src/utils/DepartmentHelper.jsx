@@ -44,7 +44,7 @@ export const DepartmentButtons = ({ id, onDepartmentDelete }) => {
         <div className="overflow-x-auto">
             <div className="flex space-x-2 sm:space-x-3 flex-nowrap">
                 <button
-                    className="px-2 py-1 sm:px-3 sm:py-2 bg-teal-600 text-white text-xs sm:text-base rounded hover:bg-teal-700 flex items-center justify-center whitespace-nowrap min-w-fit"
+                    className="px-2 py-1 sm:px-3 sm:py-2 bg-[#00B4D9] text-white text-xs sm:text-base rounded hover:bg-[#00B4D9] flex items-center justify-center whitespace-nowrap min-w-fit"
                     onClick={() => navigate(`/admin-dashboard/department/${id}`)}
                 >
                     Edit

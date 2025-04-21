@@ -77,13 +77,13 @@ const Table = () => {
         <input 
               type="text" 
               placeholder='Search By Name' 
-              className='w-full sm:w-56 md:w-64 px-2 sm:px-3 md:px-4 py-1 sm:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600 text-sm sm:text-base'
+              className='w-full sm:w-56 md:w-64 px-2 sm:px-3 md:px-4 py-1 sm:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B4D9] text-sm sm:text-base'
               onChange={filterByInput}
             />
         <div className='space-x-3'>
-        <button className='px-2 py-1 bg-teal-600 text-white hover:bg-teal-700' onClick={() => filterByButton("Pending")}>Pending</button>
-        <button className='px-2 py-1 bg-teal-600 text-white hover:bg-teal-700' onClick={() => filterByButton("Approved")}>Approved</button>
-        <button className='px-2 py-1 bg-teal-600 text-white hover:bg-teal-700' onClick={() => filterByButton("Rejected")}>Rejected</button>
+        <button className='px-2 py-1 bg-[#00B4D9] text-white hover:bg-[#00B4D9]' onClick={() => filterByButton("Pending")}>Pending</button>
+        <button className='px-2 py-1 bg-[#00B4D9] text-white hover:bg-[#00B4D9]' onClick={() => filterByButton("Approved")}>Approved</button>
+        <button className='px-2 py-1 bg-[#00B4D9] text-white hover:bg-[#00B4D9]' onClick={() => filterByButton("Rejected")}>Rejected</button>
         </div>
     </div>
 

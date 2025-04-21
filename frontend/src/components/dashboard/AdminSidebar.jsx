@@ -14,7 +14,7 @@ import {AiOutlineFileText} from 'react-icons/ai'
 const AdminSidebar = () => {
   return (
     <div className="hidden md:block bg-gray-800 text-white w-64 fixed top-0 left-0 h-screen space-y-2 z-40 ">
-      <div className="bg-teal-600 h-12 flex items-center justify-center">
+      <div className="bg-[#00B4D9] h-12 flex items-center justify-center">
         <h3 className="text-2xl text-center font-pacific">Employee MS</h3>
       </div>
       <div className="px-4">
@@ -22,8 +22,8 @@ const AdminSidebar = () => {
           to="/admin-dashboard"
           className={({ isActive }) =>
             `${
-              isActive ? "bg-teal-500" : ""
-            } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              isActive ? "bg-[#00B4D9]" : ""
+            } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
           }
           end
         >
@@ -34,8 +34,8 @@ const AdminSidebar = () => {
           to="/admin-dashboard/employees"
           className={({ isActive }) =>
             `${
-              isActive ? "bg-teal-500" : ""
-            } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              isActive ? "bg-[#00B4D9]" : ""
+          } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
           }
           end
         >
@@ -46,8 +46,8 @@ const AdminSidebar = () => {
           to="/admin-dashboard/departments"
           className={({ isActive }) =>
             `${
-              isActive ? "bg-teal-500" : ""
-            } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              isActive ? "bg-[#00B4D9]" : ""
+          } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
           }
         >
           <FaBuilding />
@@ -57,8 +57,8 @@ const AdminSidebar = () => {
           to="/admin-dashboard/leaves"
           className={({ isActive }) =>
             `${
-              isActive ? "bg-teal-500" : ""
-            } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              isActive ? "bg-[#00B4D9]" : ""
+          } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
           }
         >
           <FaCalendarAlt />
@@ -68,8 +68,8 @@ const AdminSidebar = () => {
           to="/admin-dashboard/salary/add"
           className={({ isActive }) =>
             `${
-              isActive ? "bg-teal-500" : ""
-            } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              isActive ? "bg-[#00B4D9]" : ""
+          } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
           }
         >
           <FaMoneyBillWave />
@@ -79,8 +79,8 @@ const AdminSidebar = () => {
           to={`/admin-dashboard/attendance`}
           className={({ isActive }) =>
             `${
-              isActive ? "bg-teal-500" : " "
-            } flex items-center space-x-4  py-2.5 px-4 rounded`
+              isActive ? "bg-[#00B4D9]" : " "
+            } flex items-center space-x-4  py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
           }
         >
           <FaRegCalendarAlt />
@@ -90,8 +90,8 @@ const AdminSidebar = () => {
           to={`/admin-dashboard/attendance-report`}
           className={({ isActive }) =>
             `${
-              isActive ? "bg-teal-500" : " "
-            } flex items-center space-x-4  py-2.5 px-4 rounded`
+              isActive ? "bg-[#00B4D9]" : " "
+            } flex items-center space-x-4  py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
           }
         >
           <AiOutlineFileText />
@@ -101,8 +101,8 @@ const AdminSidebar = () => {
           to="/admin-dashboard/setting"
           className={({ isActive }) =>
             `${
-              isActive ? "bg-teal-500" : ""
-            } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              isActive ? "bg-[#00B4D9]" : ""
+          } flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
           }
         >
           <FaCogs />

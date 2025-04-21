@@ -51,7 +51,7 @@ const AddLeave = () => {
             <select
               name="leaveType"
               onChange={handleChange}
-              className="mt-1 p-2 sm:p-3 block w-full border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500 text-sm sm:text-base"
+              className="mt-1 p-2 sm:p-3 block w-full border border-gray-300 rounded-md focus:ring-[#00B4D9] focus:border-[#00B4D9] text-sm sm:text-base"
               required
             >
               <option value="">Select Leave Type</option>
@@ -72,7 +72,7 @@ const AddLeave = () => {
                 type="date"
                 name="startDate"
                 onChange={handleChange}
-                className="mt-1 p-2 sm:p-3 block w-full border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500 text-sm sm:text-base"
+                className="mt-1 p-2 sm:p-3 block w-full border border-gray-300 rounded-md focus:ring-[#00B4D9] focus:border-[#00B4D9] text-sm sm:text-base"
                 required
               />
             </div>
@@ -86,7 +86,7 @@ const AddLeave = () => {
                 type="date"
                 name="endDate"
                 onChange={handleChange}
-                className="mt-1 p-2 sm:p-3 block w-full border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500 text-sm sm:text-base"
+                className="mt-1 p-2 sm:p-3 block w-full border border-gray-300 rounded-md focus:ring-[#00B4D9] focus:border-[#00B4D9] text-sm sm:text-base"
                 required
               />
             </div>
@@ -101,7 +101,7 @@ const AddLeave = () => {
               name="reason"
               placeholder="Reason"
               onChange={handleChange}
-              className="w-full mt-1 p-2 sm:p-3 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500 text-sm sm:text-base min-h-[100px]"
+              className="w-full mt-1 p-2 sm:p-3 border border-gray-300 rounded-md focus:ring-[#00B4D9] focus:border-[#00B4D9] text-sm sm:text-base min-h-[100px]"
               required
             ></textarea>
           </div>
@@ -109,7 +109,7 @@ const AddLeave = () => {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full mt-4 sm:mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 sm:py-3 px-4 rounded-xl transition-colors duration-200"
+            className="w-full mt-4 sm:mt-6 bg-[#00B4D9] hover:bg-[#00B4D9] text-white font-bold py-2 sm:py-3 px-4 rounded-xl transition-colors duration-200"
           >
             Submit Leave Request
           </button>

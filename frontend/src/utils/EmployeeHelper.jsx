@@ -88,7 +88,7 @@ export const fetchDepartments = async () => {
           View
         </button>
         <button
-          className="px-2 py-1 sm:px-4 sm:py-2 bg-yellow-600 hover:bg-yellow-700 text-white text-xs sm:text-base rounded-md transition-colors whitespace-nowrap"
+          className="px-2 py-1 sm:px-4 sm:py-2 bg-[#00B4D9] hover:bg-[#00B4D9] text-white text-xs sm:text-base rounded-md transition-colors whitespace-nowrap"
           onClick={() => navigate(`/admin-dashboard/employees/edit/${id}`)}
         >
           Edit

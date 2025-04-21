@@ -58,12 +58,12 @@ const EmployeeList = () => {
             <input 
               type="text" 
               placeholder='Search By Name' 
-              className='w-full sm:w-56 md:w-64 px-2 sm:px-3 md:px-4 py-1 sm:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-teal-600 text-sm sm:text-base'
+              className='w-full sm:w-56 md:w-64 px-2 sm:px-3 md:px-4 py-1 sm:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B4D9] text-sm sm:text-base'
               onChange={handleFilter}
             />
             <Link 
               to="/admin-dashboard/add-employee" 
-              className="w-full sm:w-auto px-4 sm:px-5 md:px-6 py-1 sm:py-2 bg-teal-600 rounded-md text-white text-sm sm:text-base text-center hover:bg-teal-700 transition-colors"
+              className="w-full sm:w-auto px-4 sm:px-5 md:px-6 py-1 sm:py-2 bg-[#00B4D9] rounded-md text-white text-sm sm:text-base text-center hover:bg-[#00B4D9] transition-colors"
             >
               Add New Employee
             </Link>

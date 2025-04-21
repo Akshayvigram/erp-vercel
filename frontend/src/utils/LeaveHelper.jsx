@@ -52,7 +52,7 @@ export const LeaveButtons = ({ id }) => {
 
   return (
     <button
-      className="w-full sm:w-auto px-4 py-2 bg-teal-500 text-white font-medium rounded-md hover:bg-teal-600 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:outline-none transition-all duration-200 shadow-sm hover:shadow-md"
+      className="w-full sm:w-auto px-4 py-2 bg-teal-500 text-white font-medium rounded-md hover:bg-[#00B4D9] focus:ring-2 focus:ring-[#00B4D9] focus:ring-offset-2 focus:outline-none transition-all duration-200 shadow-sm hover:shadow-md"
       onClick={() => handleView(id)}
     >
       View

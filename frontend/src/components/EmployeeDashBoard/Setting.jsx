@@ -63,7 +63,7 @@ const Setting = () => {
               name="oldPassword"
               placeholder="Old Password"
               onChange={handleChange}
-              className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-[#00B4D9] focus:border-[#00B4D9]"
               required
             />
           </div>
@@ -75,7 +75,7 @@ const Setting = () => {
               name="newPassword"
               placeholder="New Password"
               onChange={handleChange}
-              className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-[#00B4D9] focus:border-[#00B4D9]"
               required
             />
           </div>
@@ -87,14 +87,14 @@ const Setting = () => {
               name="confirmPassword"
               placeholder="Confirm Password"
               onChange={handleChange}
-              className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-teal-500 focus:border-teal-500"
+              className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:ring-[#00B4D9] focus:border-[#00B4D9]"
               required
             />
           </div>
 
           <button
             type="submit"
-            className="w-full mt-4 sm:mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200"
+            className="w-full mt-4 sm:mt-6 bg-[#00B4D9] hover:bg-[#00B4D9] text-white font-bold py-2 px-4 rounded-md transition-colors duration-200"
           >
             Change Password
           </button>

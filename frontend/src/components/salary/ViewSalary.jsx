@@ -68,7 +68,7 @@ const ViewSalary = () => {
             <input
               type="text"
               placeholder="Search By Employee Id"
-              className="w-full sm:w-64 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+              className="w-full sm:w-64 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00B4D9] focus:border-[#00B4D9] transition-colors"
               onChange={filterSalaries}
             />
           </div>

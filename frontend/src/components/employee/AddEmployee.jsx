@@ -220,7 +220,7 @@ const AddEmployee = () => {
               </div>
             </div>
             <button
-              className='w-full mt-4 sm:mt-6 bg-teal-600 hover:bg-teal-700 text-white font-bold py-1 sm:py-2 px-2 sm:px-4 rounded text-sm sm:text-base'
+              className='w-full mt-4 sm:mt-6 bg-[#00B4D9] hover:bg-[#00B4D9] text-white font-bold py-1 sm:py-2 px-2 sm:px-4 rounded text-sm sm:text-base'
             >
               Add Employee
             </button>

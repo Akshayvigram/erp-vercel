@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <div className="flex items-center justify-between h-12 bg-teal-600 text-white px-4 sm:px-5 fixed top-0 left-0 right-0 z-50">
+      <div className="flex items-center justify-between h-12 bg-[#00B4D9] text-white px-4 sm:px-5 fixed top-0 left-0 right-0 z-50">
         <div className="flex items-center space-x-3 sm:space-x-4">
           <button
             className="lg:hidden text-white p-2 focus:outline-none"
@@ -33,7 +33,7 @@ const Navbar = () => {
           <p className="text-sm sm:text-base">Welcome {user.name}</p>
         </div>
         <button
-          className="px-3 sm:px-4 py-1 bg-teal-700 hover:bg-teal-800 rounded text-sm sm:text-base"
+          className="px-3 sm:px-4 py-1 bg-[#00B4D9] hover:bg-[#00B4D9] rounded text-sm sm:text-base"
           onClick={logout}
         >
           Logout
@@ -50,7 +50,7 @@ const Navbar = () => {
           <NavLink
             to="/employee-dashboard"
             className={({ isActive }) =>
-              `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
             }
             end
             onClick={() => setIsOpen(false)}
@@ -61,7 +61,7 @@ const Navbar = () => {
           <NavLink
             to={`/employee-dashboard/profile/${user._id}`}
             className={({ isActive }) =>
-              `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
             }
             end
             onClick={() => setIsOpen(false)}
@@ -72,7 +72,7 @@ const Navbar = () => {
           <NavLink
             to={`/employee-dashboard/leaves/${user._id}`}
             className={({ isActive }) =>
-              `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
             }
             onClick={() => setIsOpen(false)}
           >
@@ -82,7 +82,7 @@ const Navbar = () => {
           <NavLink
             to={`/employee-dashboard/salary/${user._id}`}
             className={({ isActive }) =>
-              `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
             }
             onClick={() => setIsOpen(false)}
           >
@@ -92,7 +92,7 @@ const Navbar = () => {
           <NavLink
             to="/employee-dashboard/setting/id"
             className={({ isActive }) =>
-              `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`
+              `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
             }
             onClick={() => setIsOpen(false)}
           >

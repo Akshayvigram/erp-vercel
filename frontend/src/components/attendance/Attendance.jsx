@@ -77,7 +77,7 @@ const fetchAttendance=async()=>{
         </p>
           <Link 
           to="admin-dashboard/attendance-report"
-          className="px-2 py-1 sm:px-4 sm:py-1.5 bg-teal-600 hover:bg-teal-700 rounded-md text-white text-sm sm:text-base w-full sm:w-auto text-center">
+          className="px-2 py-1 sm:px-4 sm:py-1.5 bg-[#00B4D9] hover:bg-[#00B4D9] rounded-md text-white text-sm sm:text-base w-full sm:w-auto text-center">
             Attendance Report
           </Link>
       </div>

@@ -68,7 +68,7 @@ const Add = () => {
                                     </label>
                                     <select
                                         name="department"
-                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00B4D9] focus:border-[#00B4D9] transition-colors"
                                         required
                                         onChange={handleDepartment}
                                     >
@@ -87,7 +87,7 @@ const Add = () => {
                                     </label>
                                     <select
                                         name="employeeId"
-                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00B4D9] focus:border-[#00B4D9] transition-colors"
                                         required
                                         onChange={handleChange}
                                     >
@@ -108,7 +108,7 @@ const Add = () => {
                                         type="number"
                                         name="basicSalary"
                                         placeholder="Basic Salary"
-                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00B4D9] focus:border-[#00B4D9] transition-colors"
                                         required
                                         onChange={handleChange}
                                     />
@@ -122,7 +122,7 @@ const Add = () => {
                                         type="number"
                                         name="allowances"
                                         placeholder="Allowances"
-                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00B4D9] focus:border-[#00B4D9] transition-colors"
                                         required
                                         onChange={handleChange}
                                     />
@@ -136,7 +136,7 @@ const Add = () => {
                                         type="number"
                                         name="deductions"
                                         placeholder="Deductions"
-                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00B4D9] focus:border-[#00B4D9] transition-colors"
                                         required
                                         onChange={handleChange}
                                     />
@@ -149,7 +149,7 @@ const Add = () => {
                                     <input
                                         type="date"
                                         name="payDate"
-                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-teal-500 focus:border-teal-500 transition-colors"
+                                        className="w-full p-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00B4D9] focus:border-[#00B4D9] transition-colors"
                                         required
                                         onChange={handleChange}
                                     />
@@ -158,7 +158,7 @@ const Add = () => {
 
                             <button
                                 type="submit"
-                                className="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-md transition-colors duration-200 shadow-md hover:shadow-lg"
+                                className="w-full bg-[#00B4D9] hover:bg-[#00B4D9] text-white font-bold py-3 px-4 rounded-md transition-colors duration-200 shadow-md hover:shadow-lg"
                             >
                                 Add Salary
                             </button>

@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <>
       {/* Navbar */}
-      <div className='flex items-center justify-between h-12 bg-teal-600 text-white px-5 fixed top-0 left-0 right-0 z-50 mb-6'>
+      <div className='flex items-center justify-between h-12 bg-[#00B4D9] text-white px-5 fixed top-0 left-0 right-0 z-50 mb-6'>
         <div className='flex items-center space-x-4'>
           <button 
             className='md:hidden text-white p-2'
@@ -25,7 +25,7 @@ const Navbar = () => {
           <p>Welcome {user.name}</p>
         </div>
         <button 
-          className='px-4 py-1 bg-teal-700 hover:bg-teal-800 rounded'
+          className='px-4 py-1 bg-[#00B4D9] hover:bg-[#00B4D9] rounded'
           onClick={logout}
         >
           Logout
@@ -38,7 +38,7 @@ const Navbar = () => {
         <div className='px-4 py-2'>
           <NavLink 
             to="/admin-dashboard"
-            className={({ isActive }) => `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`}
+            className={({ isActive }) => `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`}
             end
             onClick={() => setIsOpen(false)}
           >
@@ -47,7 +47,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink 
             to="/admin-dashboard/employees"
-            className={({ isActive }) => `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`}
+            className={({ isActive }) => `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`}
             end
             onClick={() => setIsOpen(false)}
           >
@@ -56,7 +56,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink 
             to="/admin-dashboard/departments"
-            className={({ isActive }) => `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`}
+            className={({ isActive }) => `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`}
             onClick={() => setIsOpen(false)}
           >
             <FaBuilding />
@@ -64,7 +64,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink 
             to="/admin-dashboard/leaves"
-            className={({ isActive }) => `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`}
+            className={({ isActive }) => `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`}
             onClick={() => setIsOpen(false)}
           >
             <FaCalendarAlt />
@@ -72,7 +72,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink 
             to="/admin-dashboard/salary/add"
-            className={({ isActive }) => `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`}
+            className={({ isActive }) => `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`}
             onClick={() => setIsOpen(false)}
           >
             <FaMoneyBillWave />
@@ -80,7 +80,7 @@ const Navbar = () => {
           </NavLink>
           <NavLink 
             to="/admin-dashboard/setting"
-            className={({ isActive }) => `${isActive ? "bg-teal-500" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-teal-700 transition-colors`}
+            className={({ isActive }) => `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`}
             onClick={() => setIsOpen(false)}
           >
             <FaCogs />
