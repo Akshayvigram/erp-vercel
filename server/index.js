@@ -18,19 +18,14 @@ import SalaryRouter from "./routes/salary.js";
 
 const app = express();
 
-// For __dirname usage in ES module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Serve static files
 
-// CORS configuration
 app.use(cors())
 
-// Middleware
 app.use(express.json());
 
-// API routes
 app.use("/api/auth", authRoutes);
 app.use("/api/department", departmentRoutes);
 app.use("/api/employee", employeeRouter);
@@ -40,13 +35,11 @@ app.use("/api/setting", settingRoute);
 app.use("/api/attendance", attendanceRoute);
 app.use("/api/dashboard", dashboardRouter);
 
-// Fallback for non-API routes (optional)
 app.use(express.static(path.join(__dirname, 'public/uploads')));
 
 if (ENV_VARS.NODE_ENV === "production") {
 	app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
-  // Catch-all route for client-side routing
   app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, '../frontend/dist/index.html'));
   });

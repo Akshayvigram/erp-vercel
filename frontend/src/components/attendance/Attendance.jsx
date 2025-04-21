@@ -1,90 +1,140 @@
-import React,{useState,useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
-import { columns, AttendanceButtons } from '../../utils/AttendanceHelper';
-import DataTable from 'react-data-table-component'; 
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { columns, AttendanceHelper } from '../../utils/AttendanceHelper';
+import DataTable from 'react-data-table-component';
 import axios from 'axios';
 import { useAuth } from '../../context/authContext';
 
 const Attendance = () => {
+  const [attendance, setAttendance] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [filteredAttendance, setFilteredAttendance] = useState([]);
+  const [search, setSearch] = useState('');
+  const { user } = useAuth();
 
-    const [attendance, setAttendance] = useState(null)
-    const [loading, setLoading] = useState(false)
-    const [filteredAttendance, setFilteredAttendance] = useState(null)
-    const [search, setSearch] = useState('');
-    let sno = 1; 
-    const {id} = useParams()
-    const {user} = useAuth();
+  const statusChange = () => {
+    fetchAttendance();
+  };
 
-    const statusChange = () => {
-      fetchAttendance();
-    }
-
-const fetchAttendance=async()=>{
+  const fetchAttendance = async () => {
+    setLoading(true);
     try {
-  
-      const response = await axios.get(`/api/attendance/${id}`, {
+      const response = await axios.get('http://localhost:5000/api/attendance', {
         headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
         },
       });
-      console.log(response.data);
-      
-      if(response.data.success){
-        setAttendance(response.data.attendance); 
+
+      if (response.data.success) {
+        let sno = 1;
+        const data = response.data.attendance.map((att) => ({
+          employeeId: att.employeeId.employeeId,
+          sno: sno++,
+          department: att.employeeId.department.dep_name,
+          name: att.employeeId.userId.name,
+          action: (
+            <AttendanceHelper
+              status={att.status}
+              employeeId={att.employeeId.employeeId}
+              statusChange={statusChange}
+            />
+          ),
+        }));
+        setAttendance(data);
+        setFilteredAttendance(data);
       }
     } catch (error) {
-      if(error.response && !error.response.data.success){
-        alert(error.message)
+      if (error.response && !error.response.data.success) {
+        alert(error.response.data.message || 'Error fetching attendance');
       }
-    }finally{
+    } finally {
       setLoading(false);
     }
+  };
 
-  }
-  useEffect(()=>{
+  useEffect(() => {
     fetchAttendance();
-  },[]);
-  
-  const handleAddAttendance = () => {
-    const record={
-      employeeId:id,
-      date:new Date(),
-      status:null
-    }
-    
-  }
-  if (!filteredAttendance) {
-    return <div>Loading...</div>;
-  }
+  }, []);
+
+  const handleFilter = (e) => {
+    const searchTerm = e.target.value.toLowerCase();
+    setSearch(searchTerm);
+    const records = attendance.filter((emp) =>
+      emp.employeeId.toLowerCase().includes(searchTerm) ||
+      emp.department.toLowerCase().includes(searchTerm) ||
+      emp.name.toLowerCase().includes(searchTerm)
+    );
+    setFilteredAttendance(records);
+  };
+
+  const customStyles = {
+    table: {
+      style: {
+        width: '100%',
+      },
+    },
+    responsiveWrapper: {
+      style: {
+        overflowX: 'auto',
+        '-webkit-overflow-scrolling': 'touch',
+      },
+    },
+  };
 
   return (
     <div className="p-4 sm:p-6">
-      <div className="text-center">
-        <h3 className="text-xl sm:text-2xl font-bold mt-4 sm:mt-5">
-          Manage Attendance
-        </h3>
-      </div>
-      <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-4 mt-4 sm:mt-6">
-        <input
-          type="text"
-          placeholder="Search By Dep Name"
-          className="px-2 py-1 sm:px-4 sm:py-1.5 border rounded-md w-full sm:w-auto text-sm sm:text-base"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-        <p>
-          Mark Employee for <span className="font-bold underline">{new Date().toISOString().split('T')[0]}</span>{" "}
-        </p>
-          <Link 
-          to="admin-dashboard/attendance-report"
-          className="px-2 py-1 sm:px-4 sm:py-1.5 bg-[#00B4D9] hover:bg-[#00B4D9] rounded-md text-white text-sm sm:text-base w-full sm:w-auto text-center">
-            Attendance Report
-          </Link>
-      </div>
-      <div className="mt-6">
-        <DataTable columns={columns} data={filteredAttendance} pagination paginationRowsPerPage={10} paginationComponentOptions={{ rowsPerPageOptions: [10, 20, 30] }} customStyles={{ rows: { style: { backgroundColor: '#f9fafb', color: '#333', fontSize: '14px' } }, head: { style: { backgroundColor: '#3b82f6', color: '#fff', fontSize: '14px' } } }} />
+      <div className="overflow-x-auto sm:overflow-x-visible">
+        <div className="min-w-[min-content]">
+          <div className="text-center">
+            <h3 className="text-xl sm:text-2xl font-bold mt-6 sm:mt-9">
+              Manage Attendance
+            </h3>
+          </div>
+          <div className="mt-4">
+            <div className="flex justify-between items-center flex-nowrap space-x-4 sm:space-x-0">
+              <input
+                type="text"
+                placeholder="Search By Dep Name"
+                className="px-2 py-0.5 sm:px-4 sm:py-0.5 border text-sm sm:text-base w-40 sm:w-auto"
+                value={search}
+                onChange={handleFilter}
+                aria-label="Search attendance records"
+              />
+              <p className="text-sm sm:text-base whitespace-nowrap">
+                Mark Employee for{' '}
+                <span className="font-bold underline">
+                  {new Date().toISOString().split('T')[0]}
+                </span>
+              </p>
+              <Link
+                to="admin-dashboard/attendance-report"
+                className="px-2 py-0.5 sm:px-4 sm:py-1 bg-[#00B4D9] rounded text-white text-sm sm:text-base"
+                aria-label="View attendance report"
+              >
+                Attendance Report
+              </Link>
+            </div>
+          </div>
+          <div className="mt-6">
+            {loading ? (
+              <div className="text-center py-8">Loading...</div>
+            ) : filteredAttendance.length === 0 ? (
+              <div className="text-center py-8">No attendance records found.</div>
+            ) : (
+              <DataTable
+                columns={columns}
+                data={filteredAttendance}
+                pagination
+                responsive
+                customStyles={customStyles}
+                className="w-full"
+              />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
 };
+
 export default Attendance;

@@ -164,7 +164,7 @@ const AddEmployee = () => {
                   ))}
                 </select>
               </div>
-              <div>
+              {/* <div>
                 <label className='block text-xs sm:text-sm font-medium text-gray-700'>
                   Salary
                 </label>
@@ -176,7 +176,7 @@ const AddEmployee = () => {
                   className='mt-1 p-1 sm:p-2 block w-full border border-gray-300 rounded-md text-sm sm:text-base'
                   required
                 />
-              </div>
+              </div> */}
               <div>
                 <label className='block text-xs sm:text-sm font-medium text-gray-700'>
                   Password

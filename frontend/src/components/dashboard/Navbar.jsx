@@ -1,7 +1,15 @@
 import React, { useState } from 'react'
 import { useAuth } from '../../context/authContext'
 import { NavLink } from 'react-router-dom'
-import { FaBuilding, FaCalendarAlt, FaCogs, FaMoneyBillWave, FaTachometerAlt, FaUsers, FaBars } from 'react-icons/fa'
+import {  FaBuilding,
+  FaCalendarAlt,
+  FaCogs,
+  FaMoneyBillWave,
+  FaRegCalendarAlt,
+  FaTachometerAlt,
+  FaUsers,FaBars } from 'react-icons/fa';
+  import {AiOutlineFileText} from 'react-icons/ai'
+
 
 const Navbar = () => {
   const { user, logout } = useAuth();
@@ -78,6 +86,28 @@ const Navbar = () => {
             <FaMoneyBillWave />
             <span>Salary</span>
           </NavLink>
+            <NavLink
+                    to={`/admin-dashboard/attendance`}
+                    className={({ isActive }) =>
+                      `${
+                        isActive ? "bg-[#00B4D9]" : " "
+                      } flex items-center space-x-4  py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
+                    }
+                  >
+                    <FaRegCalendarAlt />
+                    <span>Attendance</span>
+                  </NavLink>
+                  <NavLink
+                    to={`/admin-dashboard/attendance-report`}
+                    className={({ isActive }) =>
+                      `${
+                        isActive ? "bg-[#00B4D9]" : " "
+                      } flex items-center space-x-4  py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`
+                    }
+                  >
+                    <AiOutlineFileText />
+                    <span>Attendance Report</span>
+                  </NavLink>
           <NavLink 
             to="/admin-dashboard/setting"
             className={({ isActive }) => `${isActive ? "bg-[#00B4D9]" : ""} flex items-center space-x-4 py-2.5 px-4 rounded hover:bg-[#00B4D9] transition-colors`}

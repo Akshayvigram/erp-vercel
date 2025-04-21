@@ -12,8 +12,8 @@ const AttendanceSchema=new mongoose.Schema({
     },
     status : {
         type:String,
-        enum:["Present","Absent","Sick","Leave"],
-        default: null
+        enum:["present","absent","sick","leave"],
+        
     },
     createdAt:{type:Date,default:Date.now},
     updatedAt:{type:Date,default:Date.now}

@@ -19,13 +19,12 @@ export const upload=multer({storage:storage})
 export const addEmployee=async(req,res)=>{
     try {
         const{
-            name,email,employeeId,dob,gender,maritalStatus,designation,department,salary,password,role
+            name,email,employeeId,dob,gender,maritalStatus,designation,department,password,role
         }=req.body;
         
        
         
         const user=await User.findOne({email})
-        console.log(user);
         
         if(user){
             return res.status(400).json({success:false,error:"user already exists"});
@@ -48,7 +47,7 @@ export const addEmployee=async(req,res)=>{
                 maritalStatus,
                 designation,
                 department,
-                salary
+                
             })
         
             

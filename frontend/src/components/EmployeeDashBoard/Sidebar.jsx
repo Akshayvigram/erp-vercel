@@ -34,6 +34,7 @@ className={({isActive})=>`${isActive?"bg-[#00B4D9]":" "} flex items-center space
            <FaCalendarAlt/>
            <span>Salary</span>
         </NavLink>
+        
         {/* <NavLink to={`/employee-dashboard/attendance/${user._id}`}
          className={({isActive})=>`${isActive?"bg-[#00B4D9]":" "} flex items-center space-x-4  py-2.5 px-4 rounded`}
          >

@@ -1,35 +1,37 @@
 import Attendance from "../models/Attendance.js";
-
+import Employee from "../models/Employee.js";
 
 const getAttendance=async(req,res)=>{
-
-    
+ 
     try {
         const date = new Date().toISOString().split('T')[0];
 
-        const existingAttendance = await Attendance.findOne({date}).populate({
+        const attendance = await Attendance.find({date}).populate({
             path: "employeeId",
             populate: [
                 "department",
                 "userId"
             ]
         });
-
-        res.status(200).json({success: true, existingAttendance})
-    }catch(error){
+        res.status(200).json({success: true, attendance})
+    } catch(error){
         res.status(500).json({success: false, error: "get attendance server error"})
     }
 }
 
 const updateAttendance = async (req, res) => {
     try {
-        const { status, employeeId } = req.body;
-        const date = new Date().toISOString().split('T')[0];
-        const existingAttendance = await Attendance.findOne({ employeeId: employeeId, date: date });
+        const {employeeId} = req.params;
+        const {status} = req.body
         
-        if (existingAttendance) {
-            existingAttendance.status = status;
-            await existingAttendance.save();
+        const date = new Date().toISOString().split('T')[0];
+        const employee = await Employee.findOne({employeeId})
+
+        const attendance = await Attendance.findOneAndUpdate({employeeId: employee._id, date}, {status}, {new: true});
+        
+        if (attendance) {
+            attendance.status = status;
+            await attendance.save();
             res.status(200).json({ success: true, message: 'Attendance updated successfully' });
 
         } else {
@@ -50,27 +52,44 @@ const updateAttendance = async (req, res) => {
 
 const getAttendanceReport = async (req, res) => {
     try {
-        const date = new Date().toISOString().split('T')[0];
-        const existingAttendance = await Attendance.findOne({date}).populate({
+        const {date, limit = 5, skip = 0} = req.query;
+        const query = {};
+
+        if(date) {
+            query.date = date;
+        }
+
+        const attendanceData = await Attendance.find(query)
+        .populate({
             path: "employeeId",
             populate: [
                 "department",
                 "userId"
             ]
-        });
-        const groupData = existingAttendance.reduce((result, record) => {
-            if(!result[record.date]){
+        }).sort({date: -1}).limit(parseInt(limit)).skip(parseInt(skip))
+
+        const groupData = attendanceData.reduce((result, record) => {
+            if (!record || !record.date || !record.employeeId || !record.employeeId.userId || !record.employeeId.department) {
+                console.warn("Skipping invalid record:", record); // Log for debugging
+                return result;
+            }
+            if (!result[record.date]) {
                 result[record.date] = [];
             }
-            result[record.date].push(record);
-            return result;
-        }, {});
-
-        res.status(200).json({success: true, existingAttendance})
+            result[record.date].push({
+                employeeId: record.employeeId.employeeId,
+                employeeName: record.employeeId.userId.name,
+                departmentName: record.employeeId.department.dep_name,
+                status: record.status || "Not Marked"
+            });
+            return result; // Return the accumulator for reduce
+        }, {}); 
+        return res.status(201).json({ success: true, groupData });
     }catch(error){
+        console.log(error);
+        
         res.status(500).json({success: false, error: "get attendance server error"})
         
     }
 }
 export {  getAttendance, getAttendanceReport, updateAttendance };
-
