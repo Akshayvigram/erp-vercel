@@ -85,7 +85,7 @@ function AppRoutes() {
 
       <Route path="/employee-dashboard" element={
         <PrivateRoutes>
-          <RoleBasedRoutes requiredRole={["admin", "employee"]}>
+          <RoleBasedRoutes requiredRole={["admin", "employee","intern"]}>
             <EmployeeDashBoard />
           </RoleBasedRoutes>
         </PrivateRoutes>

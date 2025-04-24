@@ -16,7 +16,7 @@ const AttendanceReport = () => {
         query.append('date', dateFilter);
       }
       const response = await axios.get(
-        `http://localhost:5000/api/attendance/report?${query.toString()}`,
+        `/api/attendance/report?${query.toString()}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -51,14 +51,14 @@ const AttendanceReport = () => {
 
   return (
     <div className="min-h-screen p-4 sm:p-10 bg-white">
-      <h2 className="text-center text-xl sm:text-2xl font-bold">
+      <h2 className="text-center text-xl sm:text-2xl font-bold mt-6">
         Attendance Report
       </h2>
       <div className="mt-4">
         <h2 className="text-lg sm:text-xl font-semibold">Filter by Date</h2>
         <input
           type="date"
-          className="border bg-gray-100 w-full sm:w-auto px-4 py-2"
+          className="w-full sm:w-56 md:w-64 px-2 sm:px-3 md:px-4 py-1 sm:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B4D9] text-sm sm:text-base"
           value={dateFilter}
           onChange={(e) => {
             setDateFilter(e.target.value);

@@ -1,6 +1,6 @@
 import Attendance from "../models/Attendance.js";
 import Employee from "../models/Employee.js";
-
+import cloudinary from "../config/cloudinary.js";
 const getAttendance=async(req,res)=>{
  
     try {
@@ -92,4 +92,5 @@ const getAttendanceReport = async (req, res) => {
         
     }
 }
+ 
 export {  getAttendance, getAttendanceReport, updateAttendance };

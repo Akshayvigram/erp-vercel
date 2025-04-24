@@ -56,7 +56,7 @@ const Add = () => {
         <div className="container mx-auto px-4 py-8 min-h-screen">
             {departments ? (
                 <div className="max-w-4xl mx-auto">
-                    <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-gray-800 mt-6">
+                    <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center text-gray-800 mt-8">
                         Add Salary
                     </h2>
                     <div className="bg-white p-6 sm:p-8 rounded-lg shadow-lg">

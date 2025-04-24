@@ -95,7 +95,7 @@ const Attendance = () => {
               <input
                 type="text"
                 placeholder="Search By Dep Name"
-                className="px-2 py-0.5 sm:px-4 sm:py-0.5 border text-sm sm:text-base w-40 sm:w-auto"
+                className="w-full sm:w-56 md:w-64 px-2 sm:px-3 md:px-4 py-1 sm:py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-[#00B4D9] text-sm sm:text-base"
                 value={search}
                 onChange={handleFilter}
                 aria-label="Search attendance records"

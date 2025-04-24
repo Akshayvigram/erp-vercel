@@ -55,9 +55,9 @@ const AddLeave = () => {
               required
             >
               <option value="">Select Leave Type</option>
-              <option value="Sick Leave">Sick Leave</option>
-              <option value="Casual Leave">Casual Leave</option>
-              <option value="Annual Leave">Annual Leave</option>
+              <option value="SickLeave">Sick Leave</option>
+              <option value="CasualLeave">Casual Leave</option>
+              <option value="InternExamLeave">Intern Exam Leave Leave</option>
             </select>
           </div>
 

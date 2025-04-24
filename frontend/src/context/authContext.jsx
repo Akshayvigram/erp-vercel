@@ -39,7 +39,7 @@ const AuthContext = ({ children }) => {
 
   const login = (userData, token) => {
     setUser(userData);
-    localStorage.setItem("token", token); // Store token on login
+    localStorage.setItem("token", token); 
   };
 
   const logout = () => {

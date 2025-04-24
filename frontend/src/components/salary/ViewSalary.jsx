@@ -20,19 +20,16 @@ const ViewSalary = () => {
         },
       });
 
-      // Handle the response based on success
       if (response.data.success) {
         setSalaries(response.data.salary);
         setFilteredSalaries(response.data.salary);
       } else {
-        // If success is false (e.g., 404 from backend), treat it as no records
         setSalaries([]);
         setFilteredSalaries([]);
       }
       console.log(response.data.salary);
 
     } catch (error) {
-      // Only handle unexpected errors here (e.g., network issues)
       console.error("Error fetching salaries:", error.message);
       setSalaries([]);
       setFilteredSalaries([]);
@@ -59,18 +56,23 @@ const ViewSalary = () => {
       ) : (
         <div className="overflow-x-auto">
           <div className="text-center mb-6">
-            <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mt-4">
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-800 mt-8">
               Salary History
             </h2>
           </div>
   
           <div className="flex justify-end mb-6">
-            <input
+            {
+              user.role==="admin"&&(
+                <input
               type="text"
               placeholder="Search By Employee Id"
               className="w-full sm:w-64 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#00B4D9] focus:border-[#00B4D9] transition-colors"
               onChange={filterSalaries}
             />
+              )
+            }
+            
           </div>
   
           {filteredSalaries.length > 0 ? (

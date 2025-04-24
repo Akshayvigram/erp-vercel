@@ -13,7 +13,7 @@ import {AiOutlineFileText} from 'react-icons/ai'
 
 const AdminSidebar = () => {
   return (
-    <div className="hidden md:block bg-gray-800 text-white w-64 fixed top-0 left-0 h-screen space-y-2 z-40 ">
+    <div className="hidden md:block bg-gray-800 text-white w-64 fixed top-0 left-0 h-screen space-y-2 z-40 mt-3 ">
       <div className="bg-[#00B4D9] h-12 flex items-center justify-center">
         <h3 className="text-2xl text-center font-pacific">Employee MS</h3>
       </div>

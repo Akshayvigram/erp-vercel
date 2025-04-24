@@ -11,20 +11,18 @@ const departmentSchema=new mongoose.Schema({
     updatedAt: {type: Date, default: Date.now}
 })
 
-departmentSchema.pre("deleteOne", {document: true, query: false}, async function(next){
+departmentSchema.pre('deleteOne', { document: true, query: false }, async function (next) {
     try {
-        const employees = await Employee.find({department: this._id})
-        const empIds = employees.map(emp => emp._id)
+        await Employee.updateMany(
+            { department: this._id },
+            { $set: { department: '' } }
+        );
 
-        await Employee.deleteMany({department: this._id})
-        await Leave.deleteMany({employeeId: {$in : empIds}})
-        await Salary.deleteMany({employeeId: {$in : empIds}})
-        next()
-    }catch (error) {
-        next(error)
+        next();
+    } catch (error) {
+        console.error('Error in department deleteOne middleware:', error);
+        next(error);
     }
-}
-)
-
+});
 const Department = mongoose.model("Department", departmentSchema)
 export default Department;

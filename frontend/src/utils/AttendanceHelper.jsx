@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { useAuth } from '../context/authContext';
 
 export const columns = [
   {
@@ -36,7 +35,7 @@ export const AttendanceHelper = ({ status, employeeId, statusChange }) => {
   const markEmployee = async (statusValue) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/attendance/update/${employeeId}`,
+        `/api/attendance/update/${employeeId}`,
         { status: statusValue },
         {
           headers: {
@@ -61,28 +60,22 @@ export const AttendanceHelper = ({ status, employeeId, statusChange }) => {
       {status == null ? (
         <div className="flex space-x-8 sm:space-x-2">
           <button
-            className="px-4 py-2 bg-green-500 text-white rounded text-xl sm:px-2 sm:py-1 "
+            className="px-4 py-2 bg-green-500 text-white rounded text-sm sm:px-2 sm:py-1 "
             onClick={() => markEmployee('present')}
             aria-label="Mark employee as present"
           >
             Present
           </button>
           <button
-            className="px-4 py-2 bg-red-500 text-white rounded text-xl sm:px-2 sm:py-1 "
-            onClick={() => markEmployee('absent')}
+            className="px-4 py-2 bg-red-500 text-white rounded text-sm sm:px-2 sm:py-1 "
+            onClick={() => markEmployee('workFromHome')}
             aria-label="Mark employee as absent"
           >
-            Absent
+            Work From Home
           </button>
+          
           <button
-            className="px-4 py-2 bg-gray-500 text-white rounded text-xl sm:px-2 sm:py-1 "
-            onClick={() => markEmployee('sick')}
-            aria-label="Mark employee as sick"
-          >
-            Sick
-          </button>
-          <button
-            className="px-4 py-2 bg-yellow-500 text-white rounded text-xl sm:px-2 sm:py-1 "
+            className="px-4 py-2 bg-yellow-500 text-white rounded text-sm sm:px-2 sm:py-1 "
             onClick={() => markEmployee('leave')}
             aria-label="Mark employee as on leave"
           >

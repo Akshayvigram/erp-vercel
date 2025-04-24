@@ -4,12 +4,12 @@ import {connectToDataBase} from './db/db.js'
 const userRegister=async()=>{
      connectToDataBase();
     try {
-        const hash=await bcrypt.hash("123",10);
+        const hash=await bcrypt.hash("admin",10);
     const newUser=await User.create({
-        name:"employee",
-        email:'employee@gmail.com',
+        name:"admin",
+        email:'admin@gmail.com',
         password:hash,
-        role:"employee",
+        role:"admin",
         profileImage:"/image"
     })
     await newUser.save();

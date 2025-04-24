@@ -14,13 +14,13 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Navbar */}
-      <div className='flex items-center justify-between h-12 bg-[#00B4D9] text-white px-5 fixed top-0 left-0 right-0 z-50 mb-6'>
-        <div className='flex items-center space-x-4'>
+      <div className='flex items-center h-16 bg-[#00B4D9] text-white px-5 fixed top-0 left-0 right-0 z-50 mb-6'>
+     
+        <div className='flex items-center w-1/3 space-x-2'>
           <img 
-            src="./logo.png" // Replace with actual image URL from backend
+            src="./azhizen.png" 
             alt="Profile"
-            className='w-8 h-8 rounded-full object-cover'
+            className='w-1/3 h-10  object-cover'
           />
           <button 
             className='md:hidden text-white p-2'
@@ -28,14 +28,20 @@ const Navbar = () => {
           >
             <FaBars size={24} />
           </button>
+        </div>
+        {/* Welcome Text Section (1/3 width) */}
+        <div className='flex items-center justify-center w-1/3'>
           <p>Welcome {user.name}</p>
         </div>
-        <button 
-          className='px-4 py-1 bg-[#00B4D9] hover:bg-[#00B4D9] rounded'
-          onClick={logout}
-        >
-          Logout
-        </button>
+        {/* Logout Button Section (1/3 width) */}
+        <div className='flex items-center justify-end w-1/3'>
+          <button 
+            className='px-4 py-1 bg-[#00B4D9] hover:bg-[#00B4D9] rounded'
+            onClick={logout}
+          >
+            Logout
+          </button>
+        </div>
       </div>
 
       {/* Dropdown Menu (Mobile Only) */}
